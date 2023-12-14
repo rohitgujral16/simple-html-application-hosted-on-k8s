@@ -30,7 +30,10 @@ terraform apply
 ```
 4. You will get APi gateway url post running terraform apply
 
-5. Open the url in browser you should see the string displayed
+   <img width="711" alt="image" src="https://github.com/rohitgujral16/simple-html-application-hosted-using-lambda-apigateway/assets/40119930/c07e9b32-a272-47ef-9120-4fec1b329b8f">
+
+
+6. Open the url in browser you should see the string displayed
 
 ## Updating the string
 Update the file dynamic_string.txt - This will trigger a github actions which will update the file content in S3 bucket

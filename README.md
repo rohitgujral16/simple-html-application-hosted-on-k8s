@@ -44,7 +44,7 @@ terraform destroy
 ```
 ## Improvements
 1. Improve IAC
-- Keep separate modules for lambda and apigateway
+- Keep separate modules for IAM, lambda and apigateway
 - Make the terraform code more parameterized
 - Using s3 as backend for high availability
 2. Another github actions or better solution to zip the lambda script post updation.

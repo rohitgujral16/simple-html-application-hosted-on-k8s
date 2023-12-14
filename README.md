@@ -6,14 +6,13 @@ The idea is to display a string for eg "Hello world" and with the ability to upd
 
 S3 bucket(containing string)--> Lambda (to read string from bucket)--> ApiGateway(To host and integrate with lambda)
 ## To achieve this we will use the below services
-- S3 Bucket  (To store a text file containing string)
 - AWS Lambda (To host the logic to read the string from S3)
+- AWS IAM (To provide required access to Lambda)
 - AWS APIGateway (To host API which integrates with lambda)
 - Github actions (To update the file in S3 once the text file gets updated)
 
 ## Prerequisites
 - AWS Account
-- S3 Bucket
 - Terraform
 
 ## Deploying using IAC
@@ -40,3 +39,11 @@ Update the file dynamic_string.txt - This will trigger a github actions which wi
 ```console
 terraform destroy
 ```
+## Improvements
+1. Improve IAC
+- Keep separate modules for lambda and apigateway
+- Make the terraform code more parameterized
+- Using s3 as backend for high availability
+2. Another github actions or better solution to zip the lambda script post updation.
+3. Better README
+4. Setup domain name using Route53 

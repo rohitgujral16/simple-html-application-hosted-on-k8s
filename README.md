@@ -18,8 +18,8 @@ S3 bucket(containing string)--> Lambda (to read string from bucket)--> ApiGatewa
 ## Deploying using IAC
 1. Clone this repository
 ```console
-git clone https://github.com/rohitgujral16/simple-html-application-hosted-on-k8s.git
-cd simple-html-application-hosted-using-lambda
+git clone https://github.com/rohitgujral16/simple-html-application-hosted-using-lambda-apigateway.git
+cd simple-html-application-hosted-using-lambda-apigateway
 ```
 2. Update S3 bucket name in variables.tf
 

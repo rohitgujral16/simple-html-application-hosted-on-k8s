@@ -1,2 +1,24 @@
-name: Updating the string
-on:  push
+name: Updating displayed string
+on:
+  push:
+    paths:
+      - 'dynamic_string.txt'
+
+jobs:
+  update-the-displayed-string:
+    name: Updating the displayed string
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Update the File in S3
+        run: |
+          echo "updating the file's content in at s3://${{ secrets.S3_BUCKET_NAME }}/${{ env.TEXTFILENAME }}"
+          aws s3 cp dynamic_string.txt s3://${{ secrets.S3_BUCKET_NAME }}/${{ env.TEXTFILENAME }}
